@@ -1,0 +1,144 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@media(max-width: 720px){
+  html {
+    font-size: 70%;
+  }
+}
+
+body {
+
+  background: #EEEEEE;
+  font-family: 'Roboto', sans-serif;
+}
+
+header {
+  background: linear-gradient(to right,#0AB9DC, #2CCCDD);
+}
+
+header .content {
+  padding: 1rem 0rem 5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+header .content h1 {
+  text-align: center;
+  color: #FFF;
+  font-size: 3.5rem;
+}
+
+#container {
+  max-width: 800px;
+  margin: 0 auto 1rem;
+  padding: 1rem 1rem;
+}
+
+#header-container {
+  margin-top: -2.5rem;
+  display: flex;
+  gap: 1.25rem;
+}
+
+#header-container select {
+  outline: 0;
+  box-shadow: 0px 2px 3px rgba(0,0,0,0.5);
+  background: #32B768;
+  border-radius: 0.5rem;
+  color: #FFFF;
+  border: 0;
+  padding: 0rem 1rem;
+  font-size: 1.5rem;
+}
+
+#header-container input {
+  outline: 0;
+  flex: 1;
+  box-shadow: 0px 2px 3px rgba(0,0,0,0.5);
+  border: 0;
+  border-radius: 0.5rem;
+  height: 3.25rem;
+  background: #0894B0;
+  color: #FFFFFF;
+  padding: 0.5rem 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+#header-container input::placeholder {
+  color: #FFFF;
+}
+
+
+#header-container button {
+  color: #FFF;
+  background: #24A157;
+  padding: 0rem 1.25rem;
+  border: 0;
+  border-radius: 0.5rem;
+  box-shadow: 0px 2px 3px rgba(0,0,0,0.5);
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+#header-container button:hover {
+  background: linear-gradient(to right,#24A157, #25B162);
+}
+
+#header-container button div {
+  width: 50%;
+}
+
+#header-container button div img {
+  width: 100%;
+}
+
+
+#main-container {
+  margin-top: 5rem;
+}
+
+#main-container > div {
+  margin: auto;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+a div {
+  background: #FFFF;
+  border-radius: 0.7rem;
+}
+
+a + a div {
+  margin-top: 1rem;
+}
+
+a div p {
+  padding: 0.5rem 0.5rem 0.8rem;
+  font-size: 1rem;
+  word-wrap: break-word;
+  text-align: start;
+  font-weight: 600;
+  line-height: 1.3rem;
+}
+
+a div strong {
+  color: #FFF;
+  background: #0894B0;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0 0 0.7rem 0.7rem;
+  font-size: 1.25rem;
+  display: block;
+}

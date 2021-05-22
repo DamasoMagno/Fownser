@@ -1,0 +1,11 @@
+{
+  "sites":["brainly", "qconcursos"],
+  "result": {
+   "ask": "Oque é ética, para que serve a ética, como a ética é construida",
+   "response": ["A ética trata-se de um conjunto de valores morais e éticos que moldam a sociedade. A ética em termos de ciência pode ser vista como a área de estudo de valores morais de um grupo de pessoas ou de uma pessoa em individual. Um pessoa ética é considerada uma pessoa honesta que está apta a cobrar seus direitos, uma vez que cumpre com seus deveres. As pessoas que não são éticas vivem a margem da sociedade e quando são pegas são obrigadas a pagar uma pena, devido as suas infrações cometidas perante a sociedade."],
+   "origin": {
+    "name": "brainly",
+    "url": "https://brainly.com.br/tarefa/2771350"
+   }
+  }
+}
