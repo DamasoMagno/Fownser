@@ -1,0 +1,12 @@
+{
+  "sites":["brainly", "qconcursos"],
+  
+  "result":{
+    "ask":"",
+    "response":[""],
+    "origin":{
+      "name":"",
+      "url":""
+    }
+  }
+}

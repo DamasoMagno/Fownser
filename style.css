@@ -16,6 +16,8 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+/* === HEADER === */
+
 header {
   background: linear-gradient(to right,#0AB9DC, #2CCCDD);
 }
@@ -35,7 +37,13 @@ header .content h1 {
 #container {
   max-width: 800px;
   margin: 0 auto 1rem;
-  padding: 1rem 1rem;
+  padding: 1rem 0rem;
+}
+
+@media(max-width: 720px){
+  #container {
+    padding: 1rem 5rem;
+  }
 }
 
 #header-container {
@@ -95,50 +103,59 @@ header .content h1 {
 
 #header-container button div {
   width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-#header-container button div img {
-  width: 100%;
-}
-
 
 #main-container {
   margin-top: 5rem;
 }
 
-#main-container > div {
-  margin: auto;
+.nothing {
   text-align: center;
 }
 
-a {
-  text-decoration: none;
-  color: #000;
-}
 
-a div {
+/* === QUESTIONS === */
+.question {
   background: #FFFF;
   border-radius: 0.7rem;
 }
 
-a + a div {
+.question + .question {
   margin-top: 1rem;
 }
 
-a div p {
+.question p {
   padding: 0.5rem 0.5rem 0.8rem;
-  font-size: 1rem;
+  font-size: 1.25rem;
   word-wrap: break-word;
-  text-align: start;
+  text-align: justify;
   font-weight: 600;
-  line-height: 1.3rem;
+  line-height: 1.75rem;
 }
-
-a div strong {
+ 
+.question strong {
   color: #FFF;
   background: #0894B0;
   padding: 0.25rem 0.5rem;
   border-radius: 0 0 0.7rem 0.7rem;
   font-size: 1.25rem;
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.question strong a {
+  text-decoration: none;
+  background: #2CCCDD;
+  color: #eee;
+  padding: 0rem 1rem;
+  border-radius: 0.4rem;
+  transition: filter 0.2s;
+}
+
+.question strong a:hover {
+  filter: brightness(0.9);
 }

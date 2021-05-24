@@ -1,22 +1,21 @@
 const input = document.querySelector("input");
 const buttonSearchQuestion = document.querySelector("button");
 const select = document.querySelector("select");
+const imageResult = document.querySelector(".finalResult");
 
 let responses;
 
 const Elements = {
   renderQuestion(question){
     const html = `
-    <a>
-      <div>
-        <p>
-          ${question}
-        </p>
-        <strong>
-          Pergunta
-        </strong>
-      </div>
-    </a>
+    <div class="question">
+      <p>
+        ${question}
+      </p>
+      <strong>
+        Pergunta
+      </strong>
+    </div>
     `;
 
     return html;
@@ -24,19 +23,15 @@ const Elements = {
 
   renderAllResponses(response){
     const html = `
-    <a 
-    href="${response.origin.url}" 
-    alt="${response.origin.name}"
-    >
-      <div>
-        <p>
-          ${response.response}
-        </p>
-        <strong>
-          Reposta
-        </strong>
-      </div>
-    </a>
+    <div class="question">
+      <p>
+        ${response.response}
+      </p>
+      <strong>
+        Reposta
+        <a href="${response.origin.url}">Ver</a>
+      </strong>
+    </div>
     `;
 
     return html;
@@ -56,40 +51,38 @@ const DOM = {
 
 const API = {
   async getAllNameSite(){
-    let allSites = [...select.children];
     const data = await fetch("http://localhost:3333/sites");
     const response = await data.json();
-    response.forEach( site => 
-      allSites.forEach( name => name.innerHTML = site )
-    );
+    response.forEach(site => {
+      select.innerHTML += `<option value="${site}">${site}</option>`
+    })
   },
 
-  async getData(){
-    try {
-      await axios.get("http://localhost:3333/result")
-      .then(response => {
-        responses = response.data;
-      });
-    } catch {
-      alert("Reposta inexistente")
-    }
-  },
-
-  async sendData(){
+  async getData(event){
+    event.preventDefault();
     if(!input.value) return;
     const informations = {
-      ask: input.value,
+      title: input.value,
       origin: select.value
     };
 
-    // await axios.post("http://localhost:3333/result", informations)
-    console.log(informations);
-  }
+    try {
+      let response = await fetch("http://localhost:3333/result", {
+        headers:{ 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify(informations),
+        method: "POST"
+      });
+      response = await response.json();
+      console.log(response);
+    } catch {
+      imageResult.setAttribute("src", "assets/noneResponse.png");
+    }
+  },
 }
 
 API.getAllNameSite();
 
-buttonSearchQuestion.addEventListener("click" , async () => {
-  await API.getData();
+buttonSearchQuestion.addEventListener("click" , async (event) => {
+  await API.getData(event);
   DOM.renderAllItems();
-})
+});
