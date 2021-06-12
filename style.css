@@ -6,14 +6,14 @@
 
 @media(max-width: 720px){
   html {
-    font-size: 70%;
+    font-size: 50%;
   }
 }
 
 body {
-
   background: #EEEEEE;
   font-family: 'Roboto', sans-serif;
+  height: 100vh;
 }
 
 /* === HEADER === */
@@ -42,7 +42,8 @@ header .content h1 {
 
 @media(max-width: 720px){
   #container {
-    padding: 1rem 5rem;
+    padding: 1rem 1rem;
+    max-width: 300px;
   }
 }
 
@@ -59,7 +60,7 @@ header .content h1 {
   border-radius: 0.5rem;
   color: #FFFF;
   border: 0;
-  padding: 0rem 1rem;
+  padding: 0rem 0.5rem;
   font-size: 1.5rem;
 }
 
@@ -102,11 +103,16 @@ header .content h1 {
 }
 
 #header-container button div {
-  width: 50%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+#header-container button div img {
+  width: 1.5em;
+}
+
 
 #main-container {
   margin-top: 5rem;

@@ -67,13 +67,8 @@ const API = {
     };
 
     try {
-      let response = await fetch("http://localhost:3333/result", {
-        headers:{ 'Accept': 'application/json', 'Content-Type': 'application/json' },
-        body: JSON.stringify(informations),
-        method: "POST"
-      });
-      response = await response.json();
-      console.log(response);
+      const response = await fetch("http://localhost:3333/result");
+      responses = await response.json();
     } catch {
       imageResult.setAttribute("src", "assets/noneResponse.png");
     }
